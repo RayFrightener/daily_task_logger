@@ -9,6 +9,7 @@
 require('dotenv').config();
 const express = require('express');
 const { Pool } = require('pg');
+const formRoutes = require('./routes/formRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,8 +19,8 @@ const pool = new Pool({
 
 app.use(express.json());
 
-// Define your routes here
-// for example: app.use('/api/forms', formRoutes);
+// Define your route here
+app.use('/api/forms', formRoutes);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

@@ -1,3 +1,11 @@
 .env.local
 node_modules/
+
 personalREADME.md
+
+// backend/models/purpose.md
+purpose.md
+// backend/models/modelsUsage.md   
+modelsUsage.md
+// backend/backendExample.md
+backendExample.md
