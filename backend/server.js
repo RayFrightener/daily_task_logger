@@ -5,7 +5,6 @@
  * respective files such as controllers, routes and services.
  * 
  */
-
 require('dotenv').config();
 const express = require('express');
 const { Pool } = require('pg');
@@ -21,6 +20,7 @@ app.use(express.json());
 
 // Define your route here
 app.use('/api/forms', formRoutes);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

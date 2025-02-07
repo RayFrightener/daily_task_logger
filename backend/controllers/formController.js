@@ -21,7 +21,7 @@ exports.submitLog = async (req, res) => {
     try {
         const data = req.body;
         const savedLog = await formService.saveLogs(data);
-        req.status(201).json(savedLog);
+        res.status(201).json(savedLog);
     } catch (error) {
         res.status(500).send('Error saving log');
     }
