@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>daily_task_logger</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <!-- <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script> -->
 </head>
 <body>
-  <h1> Daily Task Logger </h1>
-  <form id="goalForm" hx-post="/api/forms/submitGoal" hx-trigger="submit">
+  <h1>Daily Task Logger</h1>
+  <form id="goalForm">
     <label for="goalName">Goal:</label>
     <input type="text" id="goalName" name="name" required>
     <button type="submit">Save</button>
   </form>
-  <div id="goalFormMessage"></div>
-    
+  <h2>Goals List</h2>
+  <ul id="goalsList"></ul>
   </div>
+  <script src="js/index.js"></script>
 </body>
 </html>
+
+
+  <!-- <h1> Daily Task Logger </h1>
+  <form id="goalForm" >
+    <label for="goalName">Goal:</label>
+    <input type="text" id="goalName" name="name" required>
+    <button type="submit" hx-post="/api/forms/submitGoal" hx-target="#goalsList" hx-swap="beforeend">Save</button>
+  </form>
+  <h2>Goals List</h2>
+  <ul id="goalsList"></ul> -->

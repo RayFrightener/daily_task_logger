@@ -37,7 +37,7 @@ exports.saveGoals = async (data) => {
         // return the inserted row, rows must be returned thru
         // the result query
         return result.rows[0];
-    } catch {
+    } catch (error) {
         // catch error if there was a problem with inserting
         // the data
         console.error("Error savign goal:", error);

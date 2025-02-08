@@ -12,6 +12,7 @@ exports.submitGoal = async (req, res) => {
         const savedGoal = await formService.saveGoals(data);
         res.status(201).json(savedGoal);
     } catch (error) {
+        console.error('Error saving goal:', error);
         res.status(500).send('Error saving goal');
     }
 };

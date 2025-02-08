@@ -5,18 +5,26 @@
  * respective files such as controllers, routes and services.
  * 
  */
-require('dotenv').config();
+require("dotenv").config();
 const express = require('express');
 const { Pool } = require('pg');
+const bodyParser = require('body-parser'); 
+const path = require('path');
 const formRoutes = require('./routes/formRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
 });
+// process.env.DATABASE_URL
 
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true })); 
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Define your route here
 app.use('/api/forms', formRoutes);
